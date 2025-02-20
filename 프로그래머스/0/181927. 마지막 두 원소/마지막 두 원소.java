@@ -7,11 +7,9 @@ class Solution {
         for(int i=0; i<num_list.length; i++){
             answer[i] = num_list[i];
         }
-        if(last>minus) {
-            answer[num_list.length] = last - minus;
-        } else {
-            answer[num_list.length] = last*2;
-        }
+        
+        answer[num_list.length] = last > minus ? last-minus : last*2;
+        
         return answer;
     }
 }
