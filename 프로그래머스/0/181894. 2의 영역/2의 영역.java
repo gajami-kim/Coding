@@ -1,26 +1,23 @@
 import java.util.*;
 class Solution {
     public int[] solution(int[] arr) {
-        List<Integer> list = new ArrayList<>();
+        int min = -1;
+        int max = -1;
         
-        int count = 0;
         for(int i=0; i<arr.length; i++) {
             if(arr[i]==2) {
-                list.add(i);
-                count++;
+                if(min == -1) {
+                    min = i;
+                } else {
+                    max = i;
+                }
             }
         }
-        
-        if(count>=2) {
-            int start = Collections.min(list);
-            int end = Collections.max(list);
-            return Arrays.copyOfRange(arr, start, end+1);
-        } else if(count==1) {
-            int two = list.get(0);
-            return new int[]{(arr[two])};
-        } else {
-            return new int[]{-1};
+
+        if(min > -1) {
+            return Arrays.copyOfRange(arr, min, Math.max(min, max) +1);
         }
         
+        return new int[]{-1};
     }
 }
