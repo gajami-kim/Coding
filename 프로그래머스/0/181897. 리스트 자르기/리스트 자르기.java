@@ -3,9 +3,7 @@ import java.util.*;
 class Solution {
     public int[] solution(int n, int[] slicer, int[] num_list) {
         List<Integer> list = new ArrayList<>();
-        int a = slicer[0];
-        int b = slicer[1];
-        int c = slicer[2];
+        int a = slicer[0], b = slicer[1], c = slicer[2];
         
         switch(n) {
             case 1:
