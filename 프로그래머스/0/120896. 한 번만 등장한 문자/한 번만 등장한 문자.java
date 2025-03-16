@@ -1,7 +1,7 @@
 import java.util.*;
 class Solution {
     public String solution(String s) {
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new TreeMap<>();
         StringBuilder answer = new StringBuilder();
         
         for(char ch : s.toCharArray()) {
@@ -12,9 +12,6 @@ class Solution {
             if(entry.getValue() == 1) answer.append(entry.getKey()); 
         }
         
-        char[] charArray = answer.toString().toCharArray();
-        Arrays.sort(charArray);
-        
-        return new String(charArray);
+        return answer.toString();
     }
 }
